@@ -1,0 +1,16 @@
+name: alkaid-ae
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14.*
+  - jax=0.9.*
+  - jaxlib=0.9.*=cpu*
+  - scikit-learn
+  - verilator
+  - pandas
+  - gxx
+  - pip:
+      - alkaid
+      - hgq2
+      - qxgb
+      - xls-python==0.1.9934

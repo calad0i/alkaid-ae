@@ -1,0 +1,15 @@
+name: legacy-hls4ml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.*
+  - tensorflow=2.15.*=cpu*
+  - gxx
+  - verilator
+  - pip:
+      - alkaid
+      - hls4ml
+      - qkeras
+      - tensorflow==2.15.*
+      - pyparsing
+      - git+https://github.com/calad0i/hls4ml-alkaid-converter
