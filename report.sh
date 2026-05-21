@@ -49,3 +49,15 @@ python synth_time.py \
 mha_ml4ps_models/rtl/mha8part \
 mha_ml4ps_models/rtl/mha16part \
 mha_ml4ps_models/rtl/mha32part \
+
+echo ==============================================
+echo ================== BDT JSC ===================
+echo ==============================================
+
+alkaid report qbdt/rtl/jsc_large qbdt/rtl/jsc_small -c comb_metric latency 'latency(ns)' LUT DSP FF 'Fmax(MHz)'
+
+echo ==============================================
+echo ================= MNIST JSC ==================
+echo ==============================================
+
+alkaid report qbdt/rtl/mnist_large qbdt/rtl/mnist_small -c comb_metric latency 'latency(ns)' LUT DSP FF 'Fmax(MHz)'
