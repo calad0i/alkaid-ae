@@ -52,7 +52,7 @@ if __name__ == '__main__':
     data = load_data()
     X_train_quantized, X_test_quantized, y_train, y_test = data
 
-    model = XGBClassifier(num_class=10, n_estimators=30, max_depth=5, eta=0.8, worker_count=8)
+    model = XGBClassifier(num_class=10, n_estimators=30, max_depth=5, eta=0.8)
     model.fit(X_train_quantized, y_train)
     y_pred_xgb = model.predict(X_test_quantized)
     print(f'sw acc: {np.mean(y_pred_xgb == y_test):.3f}')
