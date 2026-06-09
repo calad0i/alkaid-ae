@@ -41,7 +41,7 @@ def convert_and_test(model: XGBClassifier, name: str, data, leaf_quantizer, n_st
     print(f'train_acc_hw: {train_acc:.3f}, test_acc_hw: {test_acc:.3f}')
 
     rtl = RTLModel(comb, f'{name}', 'model', n_stages=n_stages, clock_period=clock_period, clock_uncertainty=0)
-    rtl.write(xls_opt=True, metadata={'comb_metric': float(test_acc)})
+    rtl.write(xls_opt=False, metadata={'comb_metric': float(test_acc)})
 
     rtl._compile(_env={'VERILATOR_FLAGS': ''}, nproc=4)  # verilating and bit-exact simulating
     assert np.all(rtl.predict(X_test_quantized, n_threads=4) == comb.predict(X_test_quantized, n_threads=4))

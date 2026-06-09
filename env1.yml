@@ -13,4 +13,3 @@ dependencies:
       - alkaid
       - hgq2
       - qxgb
-      - xls-python==0.1.9934
