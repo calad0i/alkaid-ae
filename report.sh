@@ -14,9 +14,9 @@ if [ -d "jedi/rtl" ]; then
     echo ==============================================
     echo ================== JEDI ======================
     echo ==============================================
-    alkaid report jedi/rtl/8-3 jedi/rtl/16-3 jedi/rtl/32-3 -c 'latency(ns)' LUT DSP FF 'Fmax(MHz)'
+    alkaid report jedi/rtl/16-3 jedi/rtl/32-3 -c 'latency(ns)' LUT DSP FF 'Fmax(MHz)'
 
-    python synth_time.py jedi/rtl/8-3 jedi/rtl/16-3 jedi/rtl/32-3
+    python synth_time.py jedi/rtl/16-3 jedi/rtl/32-3
 
 fi
 
@@ -25,13 +25,11 @@ echo ================= Linformer ==================
 echo ==============================================
 
 alkaid report \
-linear_ml4ps_models/rtl/lin8part \
 linear_ml4ps_models/rtl/lin16part \
 linear_ml4ps_models/rtl/lin32part \
 -c 'latency(ns)' LUT DSP FF 'Fmax(MHz)'
 
 python synth_time.py \
-linear_ml4ps_models/rtl/lin8part \
 linear_ml4ps_models/rtl/lin16part \
 linear_ml4ps_models/rtl/lin32part \
 
@@ -40,13 +38,11 @@ echo ================ Transformer =================
 echo ==============================================
 
 alkaid report \
-mha_ml4ps_models/rtl/mha8part \
 mha_ml4ps_models/rtl/mha16part \
 mha_ml4ps_models/rtl/mha32part \
 -c 'latency(ns)' LUT DSP FF 'Fmax(MHz)'
 
 python synth_time.py \
-mha_ml4ps_models/rtl/mha8part \
 mha_ml4ps_models/rtl/mha16part \
 mha_ml4ps_models/rtl/mha32part \
 
